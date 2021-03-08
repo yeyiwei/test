@@ -44,7 +44,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Package
-          path: targettarget/*.jar
+          path: target/*.jar
           #path: staging
 
       # Runs a set of commands using the runners shell
