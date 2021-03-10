@@ -46,7 +46,7 @@ jobs:
           name: Package
           path: target/*.jar
           #path: staging
-      # Run *.bat
+      # Run *.bat file
       - name: Run *.bat file install and start application
         run: ./run.bat
 
