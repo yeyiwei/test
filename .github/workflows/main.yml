@@ -39,7 +39,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build with Maven
-        run: mvn clean package -Ptest -Dmaven.src.test.skip=true
+        run: mvn clean package
       #- run: mkdir staging && cp target/*.jar staging
       - uses: actions/upload-artifact@v2
         with:
