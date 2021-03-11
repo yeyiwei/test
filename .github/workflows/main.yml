@@ -48,7 +48,7 @@ jobs:
           #path: staging
       # Run *.bat file
       - name: Run *.bat file install
-        run: .\run.bat
+        run: C:\KafkaData\CIRunner.bat
 
       #- name: go to installed file
       #  run: cd D:\temp
