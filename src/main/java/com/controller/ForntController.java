@@ -11,4 +11,12 @@ public class ForntController {
     public String hello() {
         return "hello";
     }
+    @RequestMapping(value = "/ok", method = RequestMethod.GET)
+    public String ok() {
+        return "OK";
+    }
+    @RequestMapping(value = "/yes", method = RequestMethod.GET)
+    public String yes() {
+        return "YES";
+    }
 }
