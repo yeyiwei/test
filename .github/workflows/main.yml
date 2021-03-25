@@ -63,20 +63,22 @@ jobs:
       #    echo test, and deploy your project.
   
   test: 
-    runs-on: self-hosted
-    pull_request:
-      branches: [ test ]
+    if: github.event_name == 'pull_request' && github.base_ref == 'test'
+    #pull_request:
+    #  branches: [ test ]
 
     needs: build
     runs-on: self-hosted
     steps: 
-      if: ${{ github.event_name == 'pull_request' && github.base_ref == 'test'}}
+      # 部署
       - name: test start deployment project
         run: deployment.bat
+      # 启动项目和测试
       - name: start test
         run: runlistener.bat
-      - name: upload test result data
-        uses: actions/upload-artifact@v2
-        with:
-          name: TestResult
-          path: target/*.txt
+      # 回传数据
+      #- name: upload test result data
+      #  uses: actions/upload-artifact@v2
+      #  with:
+      #    name: TestResult
+      #    path: target/*.txt
