@@ -72,10 +72,10 @@ jobs:
     steps: 
       # 部署
       - name: test start deployment project
-        run: deployment.bat
+        run: ./deployment.bat
       # 启动项目和测试
       - name: start test
-        run: runlistener.bat
+        run: ./runlistener.bat
       # 回传数据
       #- name: upload test result data
       #  uses: actions/upload-artifact@v2
