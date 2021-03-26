@@ -63,6 +63,7 @@ jobs:
       #    echo test, and deploy your project.
   
   test: 
+    #if: github.event_name == 'pull_request' && github.base_ref == 'test'
     if: github.event_name == 'pull_request' && github.event.issue.labels.*.name == 'enhancement'
     #pull_request:
     #  branches: [ test ]
