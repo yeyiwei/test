@@ -13,6 +13,10 @@ public class ForntController {
     }
     @RequestMapping(value = "/ok", method = RequestMethod.GET)
     public String ok() {
-        return "OK";
+        return "ok";
+    }
+    @RequestMapping(value = "/h", method = RequestMethod.GET)
+    public String h() {
+        return "h";
     }
 }
