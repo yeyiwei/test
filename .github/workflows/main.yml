@@ -91,5 +91,5 @@ jobs:
         run: java -jar test-1.0-SNAPSHOT.jar
       - name: Run a multi-line script
         run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+          echo Add other actions to build,
+          echo test, and deploy your project.
