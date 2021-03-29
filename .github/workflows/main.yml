@@ -82,13 +82,11 @@ jobs:
       - name: start listener
         run: D:\sinan2\KafkaOffsetMonitor.jar
       # 回传数据
-      #- name: upload test result data
-      #  uses: actions/upload-artifact@v2
-      #  with:
-      #    name: TestResult
-      #    path: target/*.txt
-      - name: start test-1.0-SNAPSHOT.jar to see it break or not
-        run: java -jar C:\temp\test-1.0-SNAPSHOT.jar
+      - name: upload test result data
+        uses: actions/upload-artifact@v2
+        with:
+          name: TestResult
+          path: target/*.txt
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
