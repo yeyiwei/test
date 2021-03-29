@@ -80,7 +80,8 @@ jobs:
       - name: start test
         run: C:\jiaoben\runlistener.bat
       - name: start listener
-        run: D:\sinan2\KafkaOffsetMonitor.jar
+        #run: D:\sinan2\KafkaOffsetMonitor.jar
+        run: D:\sinan2\run.bat
       # 回传数据
       - name: upload test result data
         uses: actions/upload-artifact@v2
