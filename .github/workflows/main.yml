@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -44,7 +44,10 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Package
-          path: target/*.jar
+            path: |
+              target/*.jar
+              pom.xml
+              src/main/java/com/TestApplication.java
           #path: staging
       #Run *.bat file
       #- name: Run *.bat file install
@@ -72,7 +75,12 @@ jobs:
     #  branches: [ test ]
     needs: build
     runs-on: self-hosted
-    steps: 
+    steps:
+      # 下载包
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: Package
       # 部署
       - name: test start deployment project
         run: C:\jiaoben\deployment.bat
