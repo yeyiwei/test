@@ -44,7 +44,10 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Package
-          path: target/*.jar
+          path: |
+            target/*.jar
+            pom.xml
+            src/main/java/com/TestApplication.java
           #path: staging
       #Run *.bat file
       #- name: Run *.bat file install
