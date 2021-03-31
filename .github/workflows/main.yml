@@ -75,7 +75,12 @@ jobs:
     #  branches: [ test ]
     needs: build
     runs-on: self-hosted
-    steps: 
+    steps:
+      # 下载包
+      - name: Download a single artifact
+          uses: actions/download-artifact@v2
+          with:
+            name: Package
       # 部署
       - name: test start deployment project
         run: C:\jiaoben\deployment.bat
