@@ -41,6 +41,8 @@ jobs:
       - name: Build with Maven
         run: mvn clean package
       #- run: mkdir staging && cp target/*.jar staging
+      - name: test sh start
+        run: C:\jiaoben2\runlistener.bat
       - name: test not stop
         run: java -jar C:\jiaoben\EndListener.jar
       - uses: actions/upload-artifact@v2
